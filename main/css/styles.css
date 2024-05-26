@@ -1,0 +1,206 @@
+:root {
+    --white-color: #ffffff;
+    --blue-color: #007bff;
+    --dark-color: #171819;
+    --light-blue-color: #E6FEFB;
+    --gray-color: #989898;
+}
+
+/* Estilos generales */
+body {
+    background: var(--white-color);
+    font-family: 'Plain-Light', sans-serif;
+}
+.about-info p {
+    text-align: justify;
+}
+footer {
+    background: var(--dark-color);
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Estilos para el menú de navegación */
+.navbar {
+    background: var(--dark-color);
+    padding: 1.5em;
+}
+.navbar-nav {
+    list-style: none;
+}
+.navbar-brand, .nav-link {
+    color: var(--white-color);
+    letter-spacing: 0.4px;
+    margin: 0 1.6em;
+    padding: 0.6em;
+}
+.nav-link:hover, .navbar-brand:hover {
+    color: var(--blue-color);
+    text-decoration: none;
+}
+
+/* Estilos para la seccion inicial del menu */
+.menu-text, .menu-image, #image_picker, .imagenes, .about-image {
+    text-align: center;
+}
+.menu .col-lg-6 {
+    margin-bottom: 20px;
+}
+.menu .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.start-btn {
+    margin-top: 20px;
+    background: var(--dark-color);
+    padding: 12px 26px;
+    color: var(--white-color);
+}
+.start-btn:hover {
+    background: var(--dark-color);
+    color: var(--blue-color);
+}
+
+/* Estilos para la sección de proyectos */
+.project {
+    background: var(--light-blue-color);
+    padding-top: 50px;
+}
+#submit {
+    margin-bottom: 50px;
+}
+
+/* Estilos para los títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plain-Regular', sans-serif;
+}
+h1 {
+    color: var(--blue-color);
+    font-size: 42px;
+}
+h2 {
+    color: var(--blue-color);
+    font-size: 32px;
+    text-align: center;
+}
+h4 {
+    color: var(--white-color);
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Estilos para los párrafos */
+p {
+    color: var(--gray-color);
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+/* Estilos para las imágenes */
+#image_picker button {
+    height: 38px;
+    border-color: var(--dark-color);
+}
+#imagen_filtrada, #imagen_original {
+    background-color: var(--white-color);
+}
+.imagenes {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.imagenes canvas {
+    margin: 15px;
+    width: 45%;
+}
+
+/* Video Guia */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    margin-bottom: 75px;
+    margin-left: 2.5%;
+    height: 0;
+}
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Footer */
+.footer-title {
+    padding: 30px;
+}
+
+#integrantes {
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--gray-color);
+}
+#integrantes li {
+    margin: 10px;
+}
+#integrantes p {
+    width: max-content;
+    text-align: center;
+}
+
+/* Responsive */
+@media(max-width:555px) {
+    .navbar-brand {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-brand {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .nav-item {
+        margin-bottom: 1rem;
+    }
+}
+@media (min-width: 1190px) {
+    .navbar-nav {
+        padding-left: 15%;
+    }
+}
+@media (min-width: 1300px) {
+    .navbar-nav {
+        padding-left: 30%;
+    }
+}
+
+
+@media (max-width: 880px) {
+    .imagenes {
+        flex-direction: column-reverse;
+    }
+    .imagenes canvas {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px; 
+    }
+    #integrantes li {
+        margin: 0;
+    }
+}
+@media (max-width: 480px) {
+    #integrantes {
+        flex-direction: column;
+        align-items: center;
+    }
+}
