@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Filtrado de Imágenes</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pagina web para filtrar imagenes con los filtros de media, mediana y laplaciano">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="main/css/styles.css">
+</head>
+<body>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="https://sway.cloud.microsoft/12ojDsAQMV8pQPRx?ref=Link">
+                TF – MATEMÁTICA COMPUTACIONAL 
+            </a>
+            <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Acerca del proyecto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" class="nav-link">Filtrar Imágenes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#guide" class="nav-link">Ayuda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- MENU INICIO -->
+    <section class="menu">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div class="menu-text">
+                        <h1 class="text-white">Filtrado de Imágenes</h1>
+                        <a href="#project" class="start-btn btn">Iniciar</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-image">
+                        <img src="main/images/desk.png" class="img-fluid" alt="girl-working-at-desk">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto" style="padding: 7.5%">
+                    <div class="about-info">
+                        <h2>¿Qué es el filtrado de imágenes?</h2>
+                        <br>
+                        <p>El filtrado de imágenes es una técnica esencial centrada en la manipulación de la apariencia visual de una foto o imagen, las cuales se buscan mejorar mediante el uso de múltiples filtros o máscaras. Estos filtros pueden ser utilizados para una amplia variedad de propósitos tales como eliminar el ruido, suavizar los bordes, realzar características o detectar detalles de una imagen en específico.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="main/images/photograph.png" class="img-fluid" alt="photograph">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PROJECT -->
+    <section class="project section" id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="imagenes">
+                        <canvas id="imagen_filtrada" width="750" height="400"></canvas>
+                        <canvas id="imagen_original" width="750" height="400"></canvas>
+                    </div>
+                    <div id="image_picker" class="mt-4">
+                        <div class="custom-file">
+                            <input id="image_input" type="file" class="custom-file-input" lang="es" accept="image/png,image/jpeg,image/jpg">
+                        </div>
+                    </div>
+                    <form action="filtro" method="post" class="mt-4">
+                        <div class="form-group">
+                            <select name="filtro" id="filtro" class="form-control form-control-lg">
+                                <option value="mediana">mediana</option>
+                                <option value="media">media</option>
+                                <option value="laplaciano">laplaciano</option>
+                                <option value="sobel">sobel</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div id="submit" class="d-flex justify-content-between mt-4">
+                        <button class="btn btn-lg btn-outline-primary" type="button" onclick="empezar()">Empezar</button>
+                        <button class="btn btn-lg btn-primary" type="button" onclick="downloadCanvas()">Descargar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GUIDE -->
+    <section class="guide section" id="guide">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center" style="padding: 50px;">
+                    <h2>¿Cómo usar los filtros?<br>[ video  tutorial ]</h2>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="video-responsive">
+                        <iframe 
+                            src="https://www.youtube.com/embed/U-vO38hfbT4" frameborder="0" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="site-footer text-center">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h1 class="footer-title">Procesamiento Digital y Filtrado de Imágenes</h1>
+                </div>
+                <div>
+                    <p>2024 Matematica Computacional - WS42<br>Grupo 2 - Todos los derechos reservados &copy;</p>
+                </div>
+                <div>
+                    <h4>INTEGRANTES</h4>
+                    <ul id="integrantes" class="list-unstyled">
+                        <li>Oscar Aranda</li>
+                        <li>Nelson Vega</li>
+                        <li>Javier Murga</li>
+                        <li>Jofet Espinoza </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="main/code/app.js"></script>
+</body>
+</html>
